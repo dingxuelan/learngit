@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/JsonExportExcel.min.js"></script>
+		<script>
+			function getExcel(){
+				var option={};
+				option.fileName = 'excel'
+				option.datas=[
+				{
+					sheetData:[{one:'一行一列',two:'一行二列'},{one:'二行一列',two:'二行二列'}],
+					sheetName:'sheet',
+					sheetFilter:['two','one'],
+					sheetHeader:['第一列','第二列']
+				},
+				{
+					sheetData:[{one:'一行一列',two:'一行二列'},{one:'二行一列',two:'二行二列'}]
+				}
+				];
+				var toExcel=new ExportJsonExcel(option);
+				toExcel.saveExcel();
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="getExcel()">点击我下载表格</button>
+		<script src="https://cuikangjie.github.io/JsonExportExcel/dist/JsonExportExcel.min.js"></script>
+	</body>
+</html>
